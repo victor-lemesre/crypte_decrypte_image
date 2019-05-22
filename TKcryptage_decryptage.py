@@ -30,6 +30,8 @@ def image_melange():
 
 
 def image_ranger():
+    # Attention cette variable n'est pas la même que celles déclarée au tout debut
+    # il faut lui donner un autre nom pour eviter la confusion
     monImage = Image.open("ImageMelange.png")
     img_horizontale = Image.new("RGB", (L, H))
     img_verticale = Image.new("RGB", (L, H))
