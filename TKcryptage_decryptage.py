@@ -26,7 +26,7 @@ def image_melange(monimage):
     return img_horizontale
 
 
-def image_ranger(myimage):
+def image_ranger(monimage):
     # Attention cette variable n'est pas la même que celles déclarée au tout debut
     # il faut lui donner un autre nom pour eviter la confusion
 
@@ -53,8 +53,9 @@ def image_ranger(myimage):
     img_verticale.show()
 
 
-def affichage():
-    can1.itemconfig(photo,image=img_horizontale)
+def affichage(canvas):
+    canvas.find_all()
+    canvas.itemconfig(photo,image=img_horizontale)
 
 
 
@@ -65,10 +66,10 @@ can1 = tk.Canvas(fen1, width=L, height=H, bg='white')
 can1.pack()
 photo = tk.PhotoImage(file='lori.png')
 can1.create_image(L / 2, H / 2, image=photo)
-bouton1 = tk.Button(fen1, text='mélanger image', command=lambda: image_melange(monimage))
+bouton1 = tk.Button(fen1, text='mélanger image', command=lambda: affichage(can1))
 bouton1.pack()
 
-bouton2 = tk.Button(fen1, text='ranger image', command=lambda: image_ranger(myimage))
+bouton2 = tk.Button(fen1, text='ranger image', command=lambda: image_ranger(monimage))
 bouton2.pack()
 
 fen1.mainloop()
